@@ -1,0 +1,36 @@
+﻿1. SELECT * FROM Customers; 
+2. SELECT DISTINCT Country FROM customers;
+3. SELECT * FROM customers WHERE customerid like "BL%";
+4. SELECT * FROM orders limit 100;
+5. SELECT * FROM customers where PostalCode = '1010' OR '3012' OR '12209' OR '05023';
+6. SELECT * FROM orders WHERE shipregion is not null;
+7. SELECT * FROM customers order by country, city;
+8. INSERT INTO customers(customerid, companyname, contactname, contacttitle, address, city, postalcode, country, phone) VALUE ('DWATK', 'Grand Circus', 'David Watkins', 'Founder', '313 1st Street', 'Detroit', '31313', 'USA', '123-1234' );
+9. SET sql_safe_updates = 0; 
+   1. UPDATE orders SET shipregion='EuroZone' WHERE shipcountry='France';
+1. SET sql_safe_updates = 0; 
+   1. DELETE FROM `order details` where quantity=1;
+1. SELECT avg(quantity) as "average", min(quantity) as "min", max(quantity) as "Max" FROM `order details`;
+2. SELECT avg(quantity) as "average", min(quantity) as "min", max(quantity) as "Max" FROM `order details` GROUP BY orderid;
+3. SELECT customerid FROM orders WHERE orderid='10290';
+4. JOINS:
+   1.  SELECT * FROM orders INNER JOIN customers ON Orders.CustomerID = customers.CustomerID;
+   2.  SELECT * FROM orders LEFT JOIN customers ON Orders.CustomerID = customers.CustomerID;
+   3.  SELECT * FROM orders RIGHT JOIN customers ON Orders.CustomerID = customers.CustomerID;
+1. SELECT firstname FROM employees WHERE reportsto is null;
+2. SELECT firstname FROM employees WHERE reportsto=2;
+
+
+CREATE TABLE `db_demos`.`student` (
+  `studentID` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `classID` VARCHAR(45) NULL,
+  PRIMARY KEY (`studentID`));
+
+
+
+
+CREATE TABLE `db_demos`.`class` (
+  `classID` INT NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`classID`));
